@@ -1,5 +1,6 @@
 <html>
   <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script>
       function validar_campos() {
         var temp1 = document.forms["form_cadastro"]["email"].value;
