@@ -1,29 +1,31 @@
-<html>
-<body>
-<form> id='Cadastro' method='post'>
-<fieldset>
-<legend>Cadastro</legend>
- 
-<input type='hidden' name='submitted' id='submitted' value='1'/>
- 
-    <label for='nome' >Nome: </label><br/>
-    <input type='text' name='nome' id='nome'  maxlength="50" /><br/>
-    <label for='endereco' >Endereco:</label><br/>
-    <input type='text' name='endereco' id='endereco' maxlength="50" /><br/>
-    <label for='telefone' >Telefone:</label><br/>
-    <input type='text' name='telefone' id='telefone' maxlength="12" /><br/>
-     <br/>
-    <label for='titulo' >Tipo de usuario:</label><br/>
-    <input name=”titulo” value=”item1″ type='radio' />Admin<br/>
-    <input name=”titulo” value=”item2″ type='radio' />Usuario<br/>
-    <input name=”titulo” value=”item3″ type='radio' />Dono de restaurante<br/>
-    
-    <input type='submit' name='Cadastrar' value='Cadastrar' />
-</fieldset>
-</form>
-Welcome <?php echo $_POST["name"]; ?><br>
-Your email address is: <?php echo $_POST["email"]; ?>
 
+<!DOCTYPE HTML>
+<html> 
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script>
+      function validar_campos() {
+         var temp1 = document.forms["form_login"]["email"].value;
+        if(temp1==null || temp1==""){
+          alert("É necessário um e-mail para realizar o cadastro.");
+          return false;
+        }
+
+        temp1 = document.forms["form_login"]["senha"].value;
+         if (temp1 == null || temp1 == "") {
+          alert("É necessário uma senha para realizar o cadastro.");
+          return false;
+        }
+
+        document.forms["form_login"].submit();
+      }
+      </script>
+    </head>
+<body>
+<form action ="ValidarLogin.php" method="post" name="form_login">
+Login: <input type="text" name="email"><br>
+Senha: <input type="password" name="senha"><br>
+<button type="button" onclick="validar_campos()">Acesse</button>
+</form>
 </body>
 </html>
-
